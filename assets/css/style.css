@@ -1,0 +1,18 @@
+.container {
+    height: 100vh;
+    max-height: 100vh;
+    overflow: auto;
+}
+
+.pushToCenter {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
