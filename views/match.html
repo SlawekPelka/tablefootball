@@ -42,25 +42,36 @@
             <div class="hidden" id="actualmatch">
                 <h3 class="center"><span id="team1name"></span>&nbsp;<strong>VS</strong>&nbsp;<span id="team2name"></span></h3>
                 <div class="col-xs-12 col-md-4">
-                    <div class="form-group">
-                        <select class="form-control" name="team1" id="team1score">
-                            <% for(let i = 0; i <= 10; i++) { %>
-                                <option value="<%= i %>"><%= i %></option>
-                            <% } %>
-                        </select>
-                    </div>
+                    <% for(let i = 0; i < 3; i++) { %>
+                        <div class="col-xs-12 col-md-12" style="margin-top: 10px;">
+                            <h4 class="col-xs-6 col-md-6" style="text-align: right;"><%= teamData[Object.keys(teamData)[0]]['members'][i] %></h4>
+                            <div class="form-group col-xs-6 col-md-6">
+                                <select name="team1member<%= i + 1 %>score" id="team1member<%= i + 1 %>score" class="form-control" style="float: right;">
+                                    <% for(let z = 0; z <= 10; z++) { %>
+                                        <option value="<%= z %>"><%= z %></option>
+                                    <% } %>
+                                </select>
+                            </div>
+                        </div>
+                    <% } %>
                 </div>
                 <div class="col-xs-12 col-md-4">
-                    <h1 class="center" style="margin-top: 0;">-</h1>
+                <h1 class="center">&nbsp;</h1>
+                    <h1 class="center" style="margin-top: 10px;">-</h1>
                 </div>
                 <div class="col-xs-12 col-md-4">
-                    <div class="form-group">
-                        <select class="form-control" name="team2" id="team2score">
-                            <% for(let i = 0; i <= 10; i++) { %>
-                                <option value="<%= i %>"><%= i %></option>
-                            <% } %>
-                        </select>
-                    </div>
+                    <% for(let i = 0; i < 3; i++) { %>
+                        <div class="col-xs-12 col-md-12" style="margin-top: 10px;">
+                            <div class="form-group col-xs-6 col-md-6">
+                                <select name="team2member<%= i + 1 %>score" id="team2member<%= i + 1 %>score" class="form-control" style="float: right;">
+                                    <% for(let i = 0; i <= 10; i++) { %>
+                                        <option value="<%= i %>"><%= i %></option>
+                                    <% } %>
+                                </select>
+                            </div>
+                            <h4 class="col-xs-6 col-md-6"><%= teamData[Object.keys(teamData)[1]]['members'][i] %></h4>
+                        </div>
+                    <% } %>
                 </div>
                 <div class="col-xs-12 col-md-4 col-xs-push-0 col-md-push-4">
                     <button class="btn btn-success col-xs-12 col-md-12" id="endmatch">End the match!</button>
@@ -69,29 +80,9 @@
             <!-- END MATCH PHASE -->
         </div>
     </div>
+    <script src="/weblib/webEndOfMatch.js"></script>
     <script>
-        document.getElementById('startmatch').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('selectphase').classList.add('hidden');
-            document.getElementById('actualmatch').classList.remove('hidden');
 
-            let team1 = document.getElementById('team1');
-            document.getElementById('team1name').innerHTML = team1.options[team1.selectedIndex].value;
-            let team2 = document.getElementById('team2');
-            document.getElementById('team2name').innerHTML = team2.options[team2.selectedIndex].value;
-        });
-
-        document.getElementById('endmatch').addEventListener('click', function(e) {
-            e.preventDefault();
-            let score1 = document.getElementById('team1score');
-            let score2 = document.getElementById('team2score');
-
-            if (score1.options[score1.selectedIndex].value > score2.options[score2.selectedIndex].value) {
-                document.location.href = `/endmatch?winner=${document.getElementById('team1name').innerHTML}&loser=${document.getElementById('team2name').innerHTML}&winscore=${score1.options[score1.selectedIndex].value}&losescore=${score2.options[score2.selectedIndex].value}`;
-            } else {
-                document.location.href = `/endmatch?winner=${document.getElementById('team2name').innerHTML}&loser=${document.getElementById('team1name').innerHTML}&winscore=${score2.options[score2.selectedIndex].value}&losescore=${score1.options[score1.selectedIndex].value}`;
-            }
-        });
     </script>
 </body>
 </html>
