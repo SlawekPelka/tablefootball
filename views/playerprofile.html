@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile of </title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <%= memberData %>
+        <%= matchHistory %>
+        <%= playerstats %>
+        <% if (Object.keys(memberData) == 'error') { %>
+            <tr><td class="center"><%= memberData.error %></td></tr>
+        <% } %>
+    </div>
+</body>
+</html>

@@ -16,3 +16,50 @@
 .hidden {
     display: none;
 }
+
+.profileheader {
+    background-color: #252424;
+    border-bottom: 1px solid #000;
+}
+
+.profileheader .profiletitle {
+    margin: 1em;
+}
+
+.profileheader .profilewinlose {
+    text-align: center;
+    margin: 1em;
+}
+
+.profileheader .profileteammember {
+    font-size: 20px;
+    margin-top: 34px;
+    border-right: 1px solid #FFF;
+    text-align: center;
+}
+
+.profileheader .profileteammember a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.profileheader .profileteammember:last-child {
+    border-right: none;
+}
+
+#winlosechart {
+    width: 400px !important;
+    height: 400px !important;
+}
+
+.team-win {
+    background: rgba(46, 204, 113, 0.5);
+}
+
+.team-lose {
+    background: rgba(236,100,75, 0.5);
+}
+
+.teamhistorybar {
+    margin-bottom: 1em;
+}
