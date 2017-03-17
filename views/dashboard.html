@@ -28,7 +28,7 @@
                     <% } else { %>
                         <% for(let key in teamData) { %>
                             <tr>
-                                <td id="team" data-team="<%= teamData[key].teamname %>" style="cursor: pointer;"><%= teamData[key].teamname %></td>
+                                <td class="team" data-team="<%= teamData[key].teamname %>" style="cursor: pointer;"><%= teamData[key].teamname %></td>
                                 <td><%= teamData[key].win %>&nbsp;/&nbsp;<%= teamData[key].lose %></td>
                                 <td>
                                     <a href="/v/delete/<%= teamData[key].teamname %>" style="color: white;text-decoration: none;">Delete</a>
@@ -49,7 +49,7 @@
         </div>
     </div>
     <script>
-        document.getElementById('team').addEventListener('click', function(e) {
+        document.getElementsByClassName('team').addEventListener('click', function(e) {
             e.preventDefault();
             document.location.href = `/p/${document.getElementById('team').dataset.team}`;
         });
