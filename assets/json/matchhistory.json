@@ -1,40 +1,25 @@
 {
-	"1489770282242": {
+	"1490365626080": {
 		"teamsPlayed": [
 			"ShotMeister",
 			"JoffMeister"
 		],
-		"playedOn": 1489770282242,
+		"playedOn": 1490365626080,
 		"winner": "ShotMeister",
 		"loser": "JoffMeister",
 		"scoreWin": "9",
 		"scoreLose": "2",
 		"players": {
-			"Polka": "2",
-			"Shotje": "0",
-			"Papa": "0",
-			"Jeff": "4",
-			"Anne Panne": "1",
-			"Kei Krystle": "4"
-		}
-	},
-	"1489840953917": {
-		"teamsPlayed": [
-			"ShotMeister",
-			"JoffMeister"
-		],
-		"playedOn": 1489840953917,
-		"winner": "ShotMeister",
-		"loser": "JoffMeister",
-		"scoreWin": "10",
-		"scoreLose": "7",
-		"players": {
-			"Polka": "3",
-			"Shotje": "1",
-			"Papa": "3",
-			"Jeff": "7",
-			"Anne Panne": "1",
-			"Kei Krystle": "2"
+			"winner": {
+				"Polka": "4",
+				"Shotje": "1",
+				"Papa": "4"
+			},
+			"loser": {
+				"Jeff": "2",
+				"Anne Panne": "0",
+				"Kei Krystle": "0"
+			}
 		}
 	}
 }

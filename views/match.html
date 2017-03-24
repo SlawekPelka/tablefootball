@@ -41,12 +41,12 @@
             <!-- START MATCH PHASE -->
             <div class="hidden" id="actualmatch">
                 <h3 class="center"><span id="team1name"></span>&nbsp;<strong>VS</strong>&nbsp;<span id="team2name"></span></h3>
-                <div class="col-xs-12 col-md-4">
+                <div class="col-xs-12 col-md-4" id="team1match">
                     <% for(let i = 0; i < 3; i++) { %>
                         <div class="col-xs-12 col-md-12" style="margin-top: 10px;">
                             <h4 class="col-xs-6 col-md-6" style="text-align: right;"><%= teamData[Object.keys(teamData)[0]]['members'][i] %></h4>
                             <div class="form-group col-xs-6 col-md-6">
-                                <select name="team1member<%= i + 1 %>score" id="team1member<%= i + 1 %>score" class="form-control" style="float: right;">
+                                <select data-name="<%= teamData[Object.keys(teamData)[0]]['members'][i] %>" id="team1member<%= i + 1 %>score" class="form-control" style="float: right;">
                                     <% for(let z = 0; z <= 10; z++) { %>
                                         <option value="<%= z %>"><%= z %></option>
                                     <% } %>
@@ -59,11 +59,11 @@
                 <h1 class="center">&nbsp;</h1>
                     <h1 class="center" style="margin-top: 10px;">-</h1>
                 </div>
-                <div class="col-xs-12 col-md-4">
+                <div class="col-xs-12 col-md-4" id="team2match">
                     <% for(let i = 0; i < 3; i++) { %>
                         <div class="col-xs-12 col-md-12" style="margin-top: 10px;">
                             <div class="form-group col-xs-6 col-md-6">
-                                <select name="team2member<%= i + 1 %>score" id="team2member<%= i + 1 %>score" class="form-control" style="float: right;">
+                                <select data-name="<%= teamData[Object.keys(teamData)[1]]['members'][i] %>" id="team2member<%= i + 1 %>score" class="form-control" style="float: right;">
                                     <% for(let i = 0; i <= 10; i++) { %>
                                         <option value="<%= i %>"><%= i %></option>
                                     <% } %>

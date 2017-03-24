@@ -7,7 +7,7 @@
 			"Kei Krystle"
 		],
 		"win": 0,
-		"lose": 2
+		"lose": 1
 	},
 	"ShotMeister": {
 		"teamname": "ShotMeister",
@@ -16,17 +16,7 @@
 			"Shotje",
 			"Papa"
 		],
-		"win": 2,
-		"lose": 0
-	},
-	"ea": {
-		"teamname": "ea",
-		"members": [
-			"iueaiea",
-			"iueauiea",
-			"iueaiue"
-		],
-		"win": 0,
+		"win": 1,
 		"lose": 0
 	}
 }
