@@ -1,1 +1,22 @@
-{}
+{
+	"JoffMeister": {
+		"teamname": "JoffMeister",
+		"members": [
+			"Jeff",
+			"Anne Panne",
+			"Kei Krystle"
+		],
+		"win": 1,
+		"lose": 1
+	},
+	"ShotMeister": {
+		"teamname": "ShotMeister",
+		"members": [
+			"Polka",
+			"Shotje",
+			"Papa"
+		],
+		"win": 1,
+		"lose": 1
+	}
+}
