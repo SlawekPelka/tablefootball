@@ -1,37 +1,37 @@
 {
 	"Jeff": {
 		"name": "Jeff",
-		"xp": 120,
+		"xp": 460,
 		"level": 1,
 		"globalRank": "NaN"
 	},
 	"Anne Panne": {
 		"name": "Anne Panne",
-		"xp": 20,
+		"xp": 610,
 		"level": 1,
 		"globalRank": "NaN"
 	},
 	"Kei Krystle": {
 		"name": "Kei Krystle",
-		"xp": 20,
+		"xp": 710,
 		"level": 1,
 		"globalRank": "NaN"
 	},
 	"Polka": {
 		"name": "Polka",
-		"xp": 220,
+		"xp": 560,
 		"level": 1,
 		"globalRank": "NaN"
 	},
 	"Shotje": {
 		"name": "Shotje",
-		"xp": 70,
+		"xp": 410,
 		"level": 1,
 		"globalRank": "NaN"
 	},
 	"Papa": {
 		"name": "Papa",
-		"xp": 220,
+		"xp": 460,
 		"level": 1,
 		"globalRank": "NaN"
 	}

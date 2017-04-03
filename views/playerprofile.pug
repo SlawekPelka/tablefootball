@@ -1,0 +1,14 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        title Profile of 
+        link(rel="stylesheet" href="/assets/css/bootstrap.min.css")
+        link(rel="stylesheet" href="/assets/css/style.css")
+    body
+        p= memberData
+        p= matchHistory
+        p= playerstats
+        if (Object.keys(memberData) === 'error')
+            tr
+                td.center= memberData.error

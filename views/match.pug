@@ -1,0 +1,69 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        title Match time!
+        link(rel="stylesheet" href="/assets/css/bootstrap.min.css")
+        link(rel="stylesheet" href="/assets/css/style.css")
+    body
+        div.container
+            div.col-xs-12.col-md-12.pushToCenter
+                div#selectphase
+                    h3.center Select your teams!
+
+                    div.col-xs-12.col-md-4
+                        div.form-group
+                            select(class="form-control" name="team1" id="team1")
+                                each val, key in teamData
+                                    option(value=teamData[key].teamname)= teamData[key].teamname
+                    div.col-xs-12.col-md-4
+                        h1(class="center" style="margin-top: 0;")= VS
+                    div.col-xs-12.col-md-4
+                        div.form-group
+                            select(class="form-control" name="team2" id="team2")
+                                each val, key in teamData
+                                    option(value=teamData[key].teamname)= teamData[key].teamname
+                    div.col-xs-12.col-md-4.col-xs-push-0.col-md-push-4
+                        button.btn.btn-warning.col-xs-12.col-md-12#startmatch Start the match!
+                div.hidden#actualmatch
+                    h3.center
+                        span#team1name
+                        .
+                            &nbsp;<strong>VS</strong>&nbsp;
+                        span#team2name
+                    div.col-xs-12.col-md-4#team1match
+                        - let i = 0;
+                        while i < 3
+                             div(class="col-xs-12 col-md-12" style="margin-top: 10px;")
+                                h4(class="col-xs-6 col-md-6" style="text-align: right;")= teamData[Object.keys(teamData)[0]]['members'][i]
+                                div.form-group.col-xs-6.col-md-6
+                                    select(
+                                        data-name = teamData[Object.keys(teamData)[0]]['members'][i]
+                                        id = `team1member${i++ + 1}score`
+                                        class = "form-control"
+                                        style = "float: right;"
+                                    )
+                                        - let z = 0;
+                                        while z < 10
+                                            option(value=z)= z++
+                    div.col-xs-12.col-md-4
+                        h1.center &nbsp;
+                        h1(class="center" style="margin-top: 10px") -
+                    div.col-xs-12.col-md-4#team2match
+                        - let a = 0;
+                        while a < 3
+                            div(class="col-xs-12 col-md-12" style="margin-top: 10px;")
+                                div.form-group.col-xs-6.col-md-6
+                                    select(
+                                        data-name = teamData[Object.keys(teamData)[1]]['members'][a]
+                                        id = `team2member${a++ + 1}score`
+                                        class = "form-control"
+                                        style = "float: right;"
+                                    )
+                                        - let b = 0;
+                                        while b < 10
+                                            option(value=b)= b++
+                                h4.col-xs-6.col-md-6= teamData[Object.keys(teamData)[1]]['members'][a - 1]
+                    div.col-xs-12.col-md-4.col-xs-push-0.col-md-push-4
+                        button.btn.btn-success.col-xs-12.col-md-12#endmatch End the match!
+            script(src="/weblib/webEndOfMatch.js")

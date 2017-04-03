@@ -1,0 +1,26 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        title Add team
+        link(rel="stylesheet" href="/assets/css/bootstrap.min.css")
+        link(rel="stylesheet" href="/assets/css/style.css")
+    body
+        div.container
+            div.col-xs-12.col-md-4.col-xs-push-0.col-md-push-4.pushToCenter
+                form(action="")
+                    div.form-group
+                        label(for="teamname" class="control-label") Team name
+                        input(type="text" name="teamname" class="form-control" id="teamname" required)
+                    div.form-group
+                        label(form="member1" class="control-label") Team member 1
+                        input(type="text" name="member1" class="form-control" id="member1")
+                    div.form-group
+                        label(form="member2" class="control-label") Team member 2
+                        input(type="text" name="member2" class="form-control" id="member2")
+                    div.form-group
+                        label(form="member3" class="control-label") Team member 3
+                        input(type="text" name="member3" class="form-control" id="member3")
+                    div.form-group
+                        button.btn.btn-success.col-xs-12.col-md-12#submitTeam Submit team
+        script(src="/weblib/webAddTeam.js")

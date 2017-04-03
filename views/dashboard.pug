@@ -1,0 +1,38 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title Dashboard
+        link(rel="stylesheet" href="/assets/css/bootstrap.min.css")
+        link(rel="stylesheet" href="/assets/css/style.css")
+    body
+        p= JSON.stringify(teamRankingList)
+        br
+        p= JSON.stringify(playerRankingList)
+        div.container
+            div.col-xs-12.col-md-6.col-xs-push-0.col-md-push-3.pushToCenter
+                if (message !== '')
+                    div.col-xs-12.col-md-12
+                        h3.center= message
+                table.table.table-striped.table-hover
+                    thead
+                        tr
+                            th Team name
+                            th Win/lose
+                            th Action
+                    tbody#teamTable
+                        if (Object.keys(teamData) === 'error')
+                            tr
+                                td.center= teamData.error
+                        else
+                            each val, key in teamData
+                                tr
+                                    td(style="cursor: pointer;" onclick=`document.location.href = '/p/${teamData[key].teamname}'`)= teamData[key].teamname
+                                    td #{teamData[key].win} / #{teamData[key].lose}
+                                    td
+                                        a(class="btn btn-xs btn-danger" style="color: white;text-decoration: none;margin-right:10px;" href=`/v/delete/${teamData[key].teamname}`) Delete
+                                        a(class="btn btn-xs btn-warning" style="color: white;text-decoration: none;" href=`/v/edit/${teamData[key].teamname}`) Edit
+                div.col-xs-12.col-md-6
+                    button(class="btn btn-primary col-xs-12 col-md-12" onclick="document.location.href = '/v/add'") Add Team
+                div.col-xs-12.col-md-6
+                    button(class="btn btn-success col-xs-12 col-md-12" onclick="document.location.href = '/v/match'") Start Match
