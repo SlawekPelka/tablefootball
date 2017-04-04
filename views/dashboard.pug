@@ -18,22 +18,22 @@ html
                             th Team name
                             th Wins
                     tbody
-                        each val, i in teamRankingList
+                        each team in teamRankingList
                             tr
                                 td
-                                    a(href=`/p/${teamRankingList[i].name}`)= teamRankingList[i].name
-                                td= teamRankingList[i].score
+                                    a(href=`/p/${team.name}`)= team.name
+                                td= team.score
                 table.table.table-striped.table-hover.hidden#player-ranking-ranks
                     thead
                         tr
                             th Player name
                             th Level
                     tbody
-                        each val, i in playerRankingList
+                        each player in playerRankingList
                             tr
                                 td
-                                    a(href=`/u/${playerRankingList[i].name}`)= playerRankingList[i].name
-                                td= playerRankingList[i].level
+                                    a(href=`/u/${player.name}`)= player.name
+                                td= player.level
             div.col-xs-12.col-md-6.pushToCenter
                 if (message !== '')
                     div.col-xs-12.col-md-12
@@ -49,13 +49,13 @@ html
                             tr
                                 td.center= teamData.error
                         else
-                            each val, key in teamData
+                            each data in teamData
                                 tr
-                                    td(style="cursor: pointer;" onclick=`document.location.href = '/p/${teamData[key].teamname}'`)= teamData[key].teamname
-                                    td #{teamData[key].win} / #{teamData[key].lose}
+                                    td(style="cursor: pointer;" onclick=`document.location.href = '/p/${data.teamname}'`)= data.teamname
+                                    td #{data.win} / #{data.lose}
                                     td
-                                        a(class="btn btn-xs btn-danger" style="color: white;text-decoration: none;margin-right:10px;" href=`/v/delete/${teamData[key].teamname}`) Delete
-                                        //- a(class="btn btn-xs btn-warning" style="color: white;text-decoration: none;" href=`/v/edit/${teamData[key].teamname}`) Edit
+                                        a(class="btn btn-xs btn-danger" style="color: white;text-decoration: none;margin-right:10px;" href=`/v/delete/${data.teamname}`) Delete
+                                    //- a(class="btn btn-xs btn-warning" style="color: white;text-decoration: none;" href=`/v/edit/${teamData[key].teamname}`) Edit
                 div.col-xs-12.col-md-6
                     button(class="btn btn-primary col-xs-12 col-md-12" onclick="document.location.href = '/v/add'") Add Team
                 div.col-xs-12.col-md-6

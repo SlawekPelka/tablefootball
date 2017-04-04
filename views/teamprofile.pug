@@ -7,7 +7,7 @@ html
         link(rel="stylesheet" href="/assets/css/bootstrap.min.css")
         link(rel="stylesheet" href="/assets/css/style.css")
     body
-        div(class="col-md-12 col-xs-12" style="postion: fixed;padding:10px;")
+        div(class="col-md-12 col-xs-12" style="postion: fixed; padding: 10px;")
             button(class="btn btn-primary btn-sm" onclick="document.location.href = '/'") Back to dashboard
         div.profileheader.col-xs-12.col-md-12
             div.col-xs-12.col-md-4
@@ -36,21 +36,21 @@ html
                 canvas(id="winlosechart" width="200" height="200")
             .col-xs-12.col-md-12
                 h1 Match history
-                each val, i in teamHistory
-                    div(class=`col-xs-12 col-md-12 teamhistorybar team-${teamHistory[i].winner == teamData.teamname ? 'win' : 'lose'}`)
+                each history in teamHistory
+                    div(class=`col-xs-12 col-md-12 teamhistorybar team-${history.winner == teamData.teamname ? 'win' : 'lose'}`)
                         div.col-xs-6.col-md-6
-                            h4 Match: #{teamHistory[i].winner == teamData.teamname ? 'won' : 'lost'}
-                            h4 Score: #{teamHistory[i].scoreWin}&nbsp;-&nbsp;#{teamHistory[i].scoreLose}
-                            h4 Played against: #{teamHistory[i].winner == teamData.teamname ? teamHistory[i].loser : teamHistory[i].winner}
+                            h4 Match: #{history.winner == teamData.teamname ? 'won' : 'lost'}
+                            h4 Score: #{history.scoreWin}&nbsp;-&nbsp;#{history.scoreLose}
+                            h4 Played against: #{history.winner == teamData.teamname ? history.loser : history.winner}
                         div.col-xs-6.col-md-6
                             div.col-xs-6.col-md-6
-                                h5 <strong>#{teamHistory[i].winner}</strong>
-                                each val, nameWin in teamHistory[i].players.winner
-                                    h5 #{nameWin}: #{teamHistory[i].players.winner[nameWin]}
+                                h5 <strong>#{history.winner}</strong>
+                                each val, nameWin in history.players.winner
+                                    h5 #{nameWin}: #{history.players.winner[nameWin]}
                             div.col-xs-6.col-md-6
-                                h5 <strong>#{teamHistory[i].loser}</strong>
-                                each val, nameLose in teamHistory[i].players.loser
-                                    h5 #{nameLose}: #{teamHistory[i].players.loser[nameLose]}
+                                h5 <strong>#{history.loser}</strong>
+                                each val, nameLose in history.players.loser
+                                    h5 #{nameLose}: #{history.players.loser[nameLose]}
         script(src="/weblib/date.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js")
         script.
