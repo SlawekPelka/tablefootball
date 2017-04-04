@@ -1,7 +1,6 @@
 .container {
     height: 100vh;
     max-height: 100vh;
-    overflow: auto;
 }
 
 .pushToCenter {
@@ -20,6 +19,7 @@
 .profileheader {
     background-color: #252424;
     border-bottom: 1px solid #000;
+    margin-bottom: 1em;
 }
 
 .profileheader .profiletitle {
@@ -62,4 +62,33 @@
 
 .teamhistorybar {
     margin-bottom: 1em;
+}
+
+.ranking-area .tabs {
+    padding: 0;
+    padding-left: 2px;
+}
+
+.ranking-area {
+    margin-top: 1em;
+}
+
+.ranking-area .tabs span {
+    padding: 5px 10px;
+    padding-bottom: 5px;
+    background: #3d3d3d;
+    cursor: pointer;
+}
+
+.ranking-area .tabs span.active {
+    background: #717171;
+}
+
+.ranking-area .tabs #team-ranking-tab {
+    margin-right: 10px;
+}
+
+.ranking-area #team-ranking-ranks a, .ranking-area #player-ranking-ranks a {
+    text-decoration: none;
+    color: white;
 }

@@ -2,10 +2,13 @@ doctype html
 html
     head
         meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
         title Add team
         link(rel="stylesheet" href="/assets/css/bootstrap.min.css")
         link(rel="stylesheet" href="/assets/css/style.css")
     body
+        div(class="col-md-12" style="postion: fixed;padding:10px;")
+            button(class="btn btn-primary btn-sm" onclick="document.location.href = '/'") Back to dashboard
         div.container
             div.col-xs-12.col-md-4.col-xs-push-0.col-md-push-4.pushToCenter
                 form(action="")

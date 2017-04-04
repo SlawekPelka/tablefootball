@@ -2,15 +2,17 @@ doctype html
 html
     head
         meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
         title Match time!
         link(rel="stylesheet" href="/assets/css/bootstrap.min.css")
         link(rel="stylesheet" href="/assets/css/style.css")
     body
+        div(class="col-md-12" style="postion: fixed;padding:10px;")
+            button(class="btn btn-primary btn-sm" onclick="document.location.href = '/'") Back to dashboard
         div.container
             div.col-xs-12.col-md-12.pushToCenter
                 div#selectphase
                     h3.center Select your teams!
-
                     div.col-xs-12.col-md-4
                         div.form-group
                             select(class="form-control" name="team1" id="team1")

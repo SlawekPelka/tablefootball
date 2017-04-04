@@ -2,52 +2,55 @@ doctype html
 html
     head
         meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
         title Profile of #{teamData.teamname}
         link(rel="stylesheet" href="/assets/css/bootstrap.min.css")
         link(rel="stylesheet" href="/assets/css/style.css")
     body
+        div(class="col-md-12 col-xs-12" style="postion: fixed;padding:10px;")
+            button(class="btn btn-primary btn-sm" onclick="document.location.href = '/'") Back to dashboard
         div.profileheader.col-xs-12.col-md-12
             div.col-xs-12.col-md-4
                 h2.profiletitle= teamData.teamname
             div.col-xs-12.col-md-4
                 h2.profilewinlose #{teamData.win}&nbsp;w&nbsp;/&nbsp;#{teamData.lose}&nbsp;l
             div.col-xs-12.col-md-4
-                .profileteammember.col-xs-12.col-md-4
+                div.profileteammember.col-xs-12.col-md-4
                     a(href=`/u/${teamData.members[0]}`)= teamData.members[0]
-                .profileteammember.col-xs-12.col-md-4
+                div.profileteammember.col-xs-12.col-md-4
                     a(href=`/u/${teamData.members[1]}`)= teamData.members[1]
-                .profileteammember.col-xs-12.col-md-4
+                div.profileteammember.col-xs-12.col-md-4
                     a(href=`/u/${teamData.members[2]}`)= teamData.members[2]
-            .container
-                br
-                br
-                br
-                if (Object.keys(teamData) === 'error')
-                    tr
-                        td.center= teamData.error
-                div.col-xs-12.col-md-6
-                    div.col-xs-12.col-md-12
-                        h3 Win lose ratio: #{(Number(teamData.win) / (Number(teamData.win) + Number(teamData.lose))).toFixed(2)}
-                        h3 Last match: #{teamHistory[0].winner == teamData.teamname ? "Won" : "Lost"}
-                div.col-xs-12.col-md-6
-                    canvas(id="winlosechart" width="200" height="200")
-                .col-xs-12.col-md-12
-                    h1 Match history
-                    each val, i in teamHistory
-                        div(class=`col-xs-12 col-md-12 teamhistorybar team-${teamHistory[i].winner == teamData.teamname ? 'win' : 'lose'}`)
+        div.container
+            br
+            br
+            br
+            if (Object.keys(teamData) === 'error')
+                tr
+                    td.center= teamData.error
+            div.col-xs-12.col-md-6
+                div.col-xs-12.col-md-12
+                    h3 Win lose ratio: #{(Number(teamData.win) / (Number(teamData.win) + Number(teamData.lose))).toFixed(2)}
+                    h3 Last match: #{teamHistory[0].winner == teamData.teamname ? "Won" : "Lost"}
+            div.col-xs-12.col-md-6
+                canvas(id="winlosechart" width="200" height="200")
+            .col-xs-12.col-md-12
+                h1 Match history
+                each val, i in teamHistory
+                    div(class=`col-xs-12 col-md-12 teamhistorybar team-${teamHistory[i].winner == teamData.teamname ? 'win' : 'lose'}`)
+                        div.col-xs-6.col-md-6
+                            h4 Match: #{teamHistory[i].winner == teamData.teamname ? 'won' : 'lost'}
+                            h4 Score: #{teamHistory[i].scoreWin}&nbsp;-&nbsp;#{teamHistory[i].scoreLose}
+                            h4 Played against: #{teamHistory[i].winner == teamData.teamname ? teamHistory[i].loser : teamHistory[i].winner}
+                        div.col-xs-6.col-md-6
                             div.col-xs-6.col-md-6
-                                h4 Match: #{teamHistory[i].winner == teamData.teamname ? 'won' : 'lost'}
-                                h4 Score: #{teamHistory[i].scoreWin}&nbsp;-&nbsp;#{teamHistory[i].scoreLose}
-                                h4 Played against: #{teamHistory[i].winner == teamData.teamname ? teamHistory[i].loser : teamHistory[i].winner}
+                                h5 <strong>#{teamHistory[i].winner}</strong>
+                                each val, nameWin in teamHistory[i].players.winner
+                                    h5 #{nameWin}: #{teamHistory[i].players.winner[nameWin]}
                             div.col-xs-6.col-md-6
-                                div.col-xs-6.col-md-6
-                                    h5 <strong>#{teamHistory[i].winner}</strong>
-                                    each val, nameWin in teamHistory[i].players.winner
-                                        h5 #{nameWin}: #{teamHistory[i].players.winner[nameWin]}
-                                div.col-xs-6.col-md-6
-                                    h5 <strong>#{teamHistory[i].loser}</strong>
-                                    each val, nameLose in teamHistory[i].players.loser
-                                        h5 #{nameLose}: #{teamHistory[i].players.loser[nameLose]}
+                                h5 <strong>#{teamHistory[i].loser}</strong>
+                                each val, nameLose in teamHistory[i].players.loser
+                                    h5 #{nameLose}: #{teamHistory[i].players.loser[nameLose]}
         script(src="/weblib/date.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js")
         script.

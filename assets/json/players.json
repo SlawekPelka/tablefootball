@@ -2,7 +2,7 @@
 	"Jeff": {
 		"name": "Jeff",
 		"xp": 640,
-		"level": 1,
+		"level": 2,
 		"globalRank": "NaN"
 	},
 	"Anne Panne": {
@@ -20,7 +20,7 @@
 	"Polka": {
 		"name": "Polka",
 		"xp": 240,
-		"level": 1,
+		"level": 2,
 		"globalRank": "NaN"
 	},
 	"Shotje": {
