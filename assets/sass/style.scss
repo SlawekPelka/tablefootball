@@ -1,0 +1,80 @@
+@import 'reset';
+@import 'variables';
+
+.container {
+    height: 100vh;
+    max-height: 100vh;
+}
+
+.pushToCenter {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.center {text-align: center;}
+.hidden {display: none;}
+
+.profileheader {
+    background-color: $profileheaderbackground;
+    border-bottom: $profileheaderborder;
+    margin-bottom: 1em;
+    
+    .profiletitle {margin: 1em;}
+
+    .profilewinlose {
+        text-align: center;
+        margin: 1em;
+    }
+
+    .profileteammember {
+        font-size: $profileheadermemberfontsize;
+        margin-top: 34px;
+        border-right: 1px solid #FFF;
+        text-align: center;
+
+        a {
+            color: $defaultlinkcolor;
+            text-decoration: none;
+        }
+
+        &:last-child {border-right: none;}
+    }
+}
+
+#winlosechart {
+    width: 400px !important;
+    height: 400px !important;
+}
+
+.team-win {background: $teamwinbackground;}
+.team-lose {background: $teamlosebackground;}
+.teamhistorybar {margin-bottom: 1em;}
+
+.ranking-area {
+    margin-top: 1em;
+
+    .tabs {
+        padding: 0;
+        padding-left: 2px;
+
+        span {
+            padding: 5px 10px;
+            padding-bottom: 5px;
+            background: $rankingtabsbackground;
+            cursor: pointer;
+
+            &.active {
+                background: lighten($rankingtabsbackground, 50%);
+            }
+        }
+
+        #team-ranking-tab {margin-right: 10px;}
+    }
+
+    #team-ranking-ranks, #player-ranking-ranks {
+        a {
+            text-decoration: none;
+            color: $defaultlinkcolor;
+        }
+    }
+}
