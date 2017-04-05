@@ -1,8 +1,8 @@
 function getReadableDate(timestamp) {
-    let d = new Date(timestamp);
-    let day = d.getDay();
-    let month = d.getMonth();
-    let year = d.getFullYear();
+    let date = new Date(timestamp);
+    let day = date.getDay();
+    let month = date.getMonth();
+    let year = date.getFullYear();
 
     return `${day}/${month}/${year}`;
 }
