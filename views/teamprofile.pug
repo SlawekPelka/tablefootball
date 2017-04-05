@@ -19,6 +19,8 @@ html
                     a(href=`/u/${teamData.members[1]}`)= teamData.members[1]
                 div.profileteammember.col-xs-12.col-md-4
                     a(href=`/u/${teamData.members[2]}`)= teamData.members[2]
+        div(class="col-md-12 col-xs-12" style="postion: fixed; padding: 10px;")
+            button(class="btn btn-primary btn-sm" onclick="document.location.href = '/'") Back to dashboard
         div.container
             br
             br
@@ -49,8 +51,6 @@ html
                                 h5 <strong>#{history.loser}</strong>
                                 each val, nameLose in history.players.loser
                                     h5 #{nameLose}: #{history.players.loser[nameLose]}
-        div(class="col-md-12 col-xs-12" style="postion: fixed; padding: 10px;")
-            button(class="btn btn-primary btn-sm" onclick="document.location.href = '/'") Back to dashboard
         script(src="/weblib/date.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js")
         script.
