@@ -7,8 +7,6 @@ html
         link(rel="stylesheet" href="/assets/css/bootstrap.min.css")
         link(rel="stylesheet" href="/assets/css/style.css")
     body
-        div(class="col-md-12 col-xs-12" style="postion: fixed; padding: 10px;")
-            button(class="btn btn-primary btn-sm" onclick="document.location.href = '/'") Back to dashboard
         div.profileheader.col-xs-12.col-md-12
             div.col-xs-12.col-md-4
                 h2.profiletitle= teamData.teamname
@@ -34,7 +32,7 @@ html
                     h3 Last match: #{teamHistory[0].winner == teamData.teamname ? "Won" : "Lost"}
             div.col-xs-12.col-md-6
                 canvas(id="winlosechart" width="200" height="200")
-            .col-xs-12.col-md-12
+            div.col-xs-12.col-md-12
                 h1 Match history
                 each history in teamHistory
                     div(class=`col-xs-12 col-md-12 teamhistorybar team-${history.winner == teamData.teamname ? 'win' : 'lose'}`)
@@ -51,6 +49,8 @@ html
                                 h5 <strong>#{history.loser}</strong>
                                 each val, nameLose in history.players.loser
                                     h5 #{nameLose}: #{history.players.loser[nameLose]}
+        div(class="col-md-12 col-xs-12" style="postion: fixed; padding: 10px;")
+            button(class="btn btn-primary btn-sm" onclick="document.location.href = '/'") Back to dashboard
         script(src="/weblib/date.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js")
         script.
